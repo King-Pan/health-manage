@@ -15574,7 +15574,7 @@ module.exports = function(Chart) {
 			var me = this;
 			me.labelDiffs = [];
 			var scaleLabelDiffs = [];
-			// Parse common labels once
+			// Parse commons labels once
 			if (me.chart.data.labels && me.chart.data.labels.length > 0) {
 				helpers.each(me.chart.data.labels, function(label) {
 					var labelMoment = me.parseTime(label);
@@ -15603,7 +15603,7 @@ module.exports = function(Chart) {
 						}
 					}, me);
 				} else {
-					// We have no labels. Use common ones
+					// We have no labels. Use commons ones
 					diffsForDataset = scaleLabelDiffs;
 				}
 
