@@ -18,4 +18,16 @@ public class DocumentController {
     public ModelAndView oldPage() {
         return new ModelAndView("document/old");
     }
+    @GetMapping("/basic")
+    public ModelAndView basicPage() {
+        return new ModelAndView("document/basic");
+    }
+    @GetMapping("/life")
+    public ModelAndView lifePage() {
+        return new ModelAndView("document/life");
+    }
+    @GetMapping("/health")
+    public ModelAndView healthPage() {
+        return new ModelAndView("document/health");
+    }
 }

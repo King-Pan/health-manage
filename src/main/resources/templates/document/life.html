@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:include="commons/meta :: metaHead(title='老人管理系统 | 生活信息')">
+    </head>
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+    <!--头部-->
+    <div th:replace="commons/header :: header"></div>
+    <!--左侧导航栏-->
+    <div th:replace="commons/left :: left"></div>
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="page-title-box">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <h4 class="page-title">Dashboard</h4>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item"><a href="javascript:void(0);">Stexo</a></li>
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <div class="row">
+                    <table data-toggle="table">
+                        <thead>
+                        <tr>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Item Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Item 1</td>
+                            <td>$1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Item 2</td>
+                            <td>$2</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- container-fluid -->
+
+        </div>
+        <!-- content -->
+        <footer th:replace="commons/footer :: footer"></footer>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+</div>
+<div th:replace="commons/js :: js"></div>
+
+</body>
+</html>

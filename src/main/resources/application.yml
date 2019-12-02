@@ -1,9 +1,18 @@
 spring:
   datasource:
     name: credit_yun
-    url: jdbc:mysql://47.92.72.146:3306/health-manage?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/health-manage?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+
 shiro:
   expire: 30 #默认过期时间
   password:

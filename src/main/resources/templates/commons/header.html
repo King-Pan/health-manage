@@ -5,158 +5,133 @@
     <title>Title</title>
 </head>
 <body>
-<div th:fragment="header"  class="header">
-    <div class="pull-left">
-        <div class="logo"><a href="index.html">
-<!--            <img th:src="@{assets/images/logo.png}" alt="" />-->
-            <span>老人管理系统</span></a>
-        </div>
-        <div class="hamburger sidebar-toggle">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
+<!-- Top Bar Start -->
+<div th:fragment="header" class="topbar">
+
+    <!-- LOGO -->
+    <div class="topbar-left">
+        <a href="index.html" class="logo">
+                    <span class="logo-light">
+                            <i class="mdi mdi-camera-control"></i> 养老管理系统
+                        </span>
+            <span class="logo-sm">
+                            <i class="mdi mdi-camera-control"></i>
+                        </span>
+        </a>
     </div>
-    <div class="pull-right p-r-15">
-        <ul>
-            <li class="header-icon dib"><a href="#search"><i class="ti-search"></i></a></li>
-            <li class="header-icon dib"><i class="ti-bell"></i>
-                <div class="drop-down">
-                    <div class="dropdown-content-heading">
-                        <span class="text-left">Recent Notifications</span>
+
+    <nav class="navbar-custom">
+        <ul class="navbar-right list-inline float-right mb-0">
+
+            <!-- language-->
+            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <img th:src="@{/assets/images/flags/us_flag.jpg}" class="mr-2" height="12" alt="" /> English <span class="mdi mdi-chevron-down"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated language-switch">
+                    <a class="dropdown-item" href="#"><img th:src="@{/assets/images/flags/french_flag.jpg}" alt="" height="16" /><span> French </span></a>
+                    <a class="dropdown-item" href="#"><img th:src="@{/assets/images/flags/spain_flag.jpg}" alt="" height="16" /><span> Spanish </span></a>
+                    <a class="dropdown-item" href="#"><img th:src="@{/assets/images/flags/russia_flag.jpg}" alt="" height="16" /><span> Russian </span></a>
+                    <a class="dropdown-item" href="#"><img th:src="@{/assets/images/flags/germany_flag.jpg}" alt="" height="16" /><span> German </span></a>
+                    <a class="dropdown-item" href="#"><img th:src="@{/assets/images/flags/italy_flag.jpg}" alt="" height="16" /><span> Italian </span></a>
+                </div>
+            </li>
+
+            <!-- full screen -->
+            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                <a class="nav-link waves-effect" href="#" id="btn-fullscreen">
+                    <i class="mdi mdi-arrow-expand-all noti-icon"></i>
+                </a>
+            </li>
+
+            <!-- notification -->
+            <li class="dropdown notification-list list-inline-item">
+                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <i class="mdi mdi-bell-outline noti-icon"></i>
+                    <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-menu-lg px-1">
+                    <!-- item-->
+                    <h6 class="dropdown-item-text">
+                        Notifications
+                    </h6>
+                    <div class="slimscroll notification-item-list">
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item active">
+                            <div class="notify-icon bg-success"><i class="mdi mdi-cart-outline"></i></div>
+                            <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-danger"><i class="mdi mdi-message-text-outline"></i></div>
+                            <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-info"><i class="mdi mdi-filter-outline"></i></div>
+                            <p class="notify-details"><b>Your item is shipped</b><span class="text-muted">It is a long established fact that a reader will</span></p>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-success"><i class="mdi mdi-message-text-outline"></i></div>
+                            <p class="notify-details"><b>New Message received</b><span class="text-muted">You have 87 unread messages</span></p>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <div class="notify-icon bg-warning"><i class="mdi mdi-cart-outline"></i></div>
+                            <p class="notify-details"><b>Your order is placed</b><span class="text-muted">Dummy text of the printing and typesetting industry.</span></p>
+                        </a>
+
                     </div>
-                    <div class="dropdown-content-body">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" th:src="@{assets/images/avatar/3.jpg}"
-                                         alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Mr. Saifun</div>
-                                        <div class="notification-text">5 members joined today</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" th:src="@{assets/images/avatar/3.jpg}"
-                                         alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Mariam</div>
-                                        <div class="notification-text">likes a photo of you</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" th:src="@{assets/images/avatar/3.jpg}"
-                                         alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Tasnim</div>
-                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" th:src="@{assets/images/avatar/3.jpg}"
-                                         alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Ishrat Jahan</div>
-                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="text-center">
-                                <a href="#" class="more-link">See All</a>
-                            </li>
-                        </ul>
+                    <!-- All-->
+                    <a href="javascript:void(0);" class="dropdown-item text-center notify-all text-primary">
+                        View all <i class="fi-arrow-right"></i>
+                    </a>
+                </div>
+            </li>
+
+            <li class="dropdown notification-list list-inline-item">
+                <div class="dropdown notification-list nav-pro-img">
+                    <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img th:src="@{/assets/images/users/user-4.jpg}" alt="user" class="rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <!-- item-->
+                        <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle"></i> Profile</a>
+                        <a class="dropdown-item" href="#"><i class="mdi mdi-wallet"></i> Wallet</a>
+                        <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
+                        <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
                     </div>
                 </div>
             </li>
-            <li class="header-icon dib"><i class="ti-email"></i>
-                <div class="drop-down">
-                    <div class="dropdown-content-heading">
-                        <span class="text-left">2 New Messages</span>
-                        <a href="email.html"><i class="ti-pencil-alt pull-right"></i></a>
-                    </div>
-                    <div class="dropdown-content-body">
-                        <ul>
-                            <li class="notification-unread">
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/1.jpg" alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Saiul Islam</div>
-                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="notification-unread">
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/2.jpg" alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Ishrat Jahan</div>
-                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/3.jpg" alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Saiul Islam</div>
-                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img class="pull-left m-r-10 avatar-img" src="assets/images/avatar/2.jpg" alt=""/>
-                                    <div class="notification-content">
-                                        <small class="notification-timestamp pull-right">02:34 PM</small>
-                                        <div class="notification-heading">Ishrat Jahan</div>
-                                        <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="text-center">
-                                <a href="#" class="more-link">See All</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
+        </ul>
+
+        <ul class="list-inline menu-left mb-0">
+            <li class="float-left">
+                <button class="button-menu-mobile open-left waves-effect">
+                    <i class="mdi mdi-menu"></i>
+                </button>
             </li>
-            <li class="header-icon dib"><img class="avatar-img" src="assets/images/avatar/1.jpg" alt=""/> <span
-                    class="user-avatar">Saifun <i class="ti-angle-down f-s-10"></i></span>
-                <div class="drop-down dropdown-profile">
-                    <div class="dropdown-content-heading">
-                        <span class="text-left">Upgrade Now</span>
-                        <p class="trial-day">30 Days Trail</p>
+            <li class="d-none d-md-inline-block">
+                <form role="search" class="app-search">
+                    <div class="form-group mb-0">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <button type="submit"><i class="fa fa-search"></i></button>
                     </div>
-                    <div class="dropdown-content-body">
-                        <ul>
-                            <li><a href="#"><i class="ti-user"></i> <span>Profile</span></a></li>
-                            <li><a href="#"><i class="ti-wallet"></i> <span>My Balance</span></a></li>
-                            <li><a href="#"><i class="ti-write"></i> <span>My Task</span></a></li>
-                            <li><a href="#"><i class="ti-calendar"></i> <span>My Calender</span></a></li>
-                            <li><a href="#"><i class="ti-email"></i> <span>Inbox</span></a></li>
-                            <li><a href="#"><i class="ti-settings"></i> <span>Setting</span></a></li>
-                            <li><a href="#"><i class="ti-help-alt"></i> <span>Help</span></a></li>
-                            <li><a href="#"><i class="ti-lock"></i> <span>Lock Screen</span></a></li>
-                            <li><a href="#"><i class="ti-power-off"></i> <span>Logout</span></a></li>
-                        </ul>
-                    </div>
-                </div>
+                </form>
             </li>
         </ul>
-    </div>
+
+    </nav>
+
 </div>
+<!-- Top Bar End -->
 </body>
 </html>

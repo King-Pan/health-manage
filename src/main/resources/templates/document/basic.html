@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:include="commons/meta :: metaHead(title='老人管理系统 | 基础信息')">
+    </head>
+<body>
+
+<!-- Begin page -->
+<div id="wrapper">
+    <!--头部-->
+    <div th:replace="commons/header :: header"></div>
+    <!--左侧导航栏-->
+    <div th:replace="commons/left :: left"></div>
+    <!-- Start right Content here -->
+    <!-- ============================================================== -->
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="page-title-box">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <h4 class="page-title">档案管理-基础信息</h4>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-right">
+                                <li class="breadcrumb-item"><a th:href="@{/}">养老管理系统</a></li>
+                                <li class="breadcrumb-item"><a th:href="@{/}">档案管理</a></li>
+                                <li class="breadcrumb-item active">基础信息</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+                <div class="table-responsive">
+                    <div id="toolbar" style="margin-bottom: 5px">
+                        <button id="remove" class="btn btn-danger">
+                            <i class="glyphicon glyphicon-remove"></i> 删除
+                        </button>
+                        <button id="add" class="btn btn-success">
+                            <i class="glyphicon glyphicon-add"></i> 新增
+                        </button>
+                        <button id="modify" class="btn btn-primary">
+                            <i class="fas fa-camera"></i> 修改
+                        </button>
+                    </div>
+                    <table id="basicTable"></table>
+                </div>
+            </div>
+            <!-- container-fluid -->
+
+        </div>
+        <!-- content -->
+        <footer th:replace="commons/footer :: footer"></footer>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Right content here -->
+    <!-- ============================================================== -->
+</div>
+<div th:replace="commons/js :: js"></div>
+<script type="text/javascript" th:src="@{/js/document/basic.js}"></script>
+</body>
+</html>
