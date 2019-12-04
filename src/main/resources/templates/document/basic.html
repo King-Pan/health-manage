@@ -26,7 +26,7 @@
                             <ol class="breadcrumb float-right">
                                 <li class="breadcrumb-item"><a th:href="@{/}">养老管理系统</a></li>
                                 <li class="breadcrumb-item"><a th:href="@{/}">档案管理</a></li>
-                                <li class="breadcrumb-item active">基础信息</li>
+                                <li class="breadcrumb-item active"><a th:href="@{/document/basic}">基础信息</a></li>
                             </ol>
                         </div>
                     </div>
@@ -34,14 +34,14 @@
                 </div>
                 <div class="table-responsive">
                     <div id="toolbar" style="margin-bottom: 5px">
-                        <button id="remove" class="btn btn-danger">
-                            <i class="glyphicon glyphicon-remove"></i> 删除
-                        </button>
                         <button id="add" class="btn btn-success">
-                            <i class="glyphicon glyphicon-add"></i> 新增
+                            <i class="fas fa-plus-square" aria-hidden="true"></i> 新增
                         </button>
                         <button id="modify" class="btn btn-primary">
-                            <i class="fas fa-camera"></i> 修改
+                            <i class="fas fa-edit" aria-hidden="true"></i>修改
+                        </button>
+                        <button id="remove" class="btn btn-danger">
+                            <i class="fas fa-trash" aria-hidden="true"></i> 删除
                         </button>
                     </div>
                     <table id="basicTable"></table>

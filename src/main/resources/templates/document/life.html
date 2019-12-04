@@ -5,6 +5,7 @@
     </head>
 <body>
 
+
 <!-- Begin page -->
 <div id="wrapper">
     <!--头部-->
@@ -20,39 +21,31 @@
                 <div class="page-title-box">
                     <div class="row align-items-center">
                         <div class="col-sm-6">
-                            <h4 class="page-title">Dashboard</h4>
+                            <h4 class="page-title">档案管理-生活信息</h4>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-right">
-                                <li class="breadcrumb-item"><a href="javascript:void(0);">Stexo</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item"><a th:href="@{/}">养老管理系统</a></li>
+                                <li class="breadcrumb-item"><a th:href="@{/}">档案管理</a></li>
+                                <li class="breadcrumb-item active"><a th:href="@{/document/life}">生活信息</a></li>
                             </ol>
                         </div>
                     </div>
                     <!-- end row -->
                 </div>
-                <div class="row">
-                    <table data-toggle="table">
-                        <thead>
-                        <tr>
-                            <th>Item ID</th>
-                            <th>Item Name</th>
-                            <th>Item Price</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Item 1</td>
-                            <td>$1</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Item 2</td>
-                            <td>$2</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="table-responsive">
+                    <div id="toolbar" style="margin-bottom: 5px">
+                        <button id="add" class="btn btn-success">
+                            <i class="fas fa-plus-square" aria-hidden="true"></i> 新增
+                        </button>
+                        <button id="modify" class="btn btn-primary">
+                            <i class="fas fa-edit" aria-hidden="true"></i>修改
+                        </button>
+                        <button id="remove" class="btn btn-danger">
+                            <i class="fas fa-trash" aria-hidden="true"></i> 删除
+                        </button>
+                    </div>
+                    <table id="basicTable"></table>
                 </div>
             </div>
             <!-- container-fluid -->
@@ -66,6 +59,6 @@
     <!-- ============================================================== -->
 </div>
 <div th:replace="commons/js :: js"></div>
-
+<script type="text/javascript" th:src="@{/js/document/basic.js}"></script>
 </body>
 </html>
