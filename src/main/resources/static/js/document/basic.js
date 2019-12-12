@@ -24,6 +24,11 @@ $(function () {
                 return index + 1;
             }
         }, {
+            field: 'id',
+            title: 'ID',
+            align: 'center'
+            //sortable: true    //排序
+        }, {
             field: 'realName',
             title: '姓名',
             align: 'center'
@@ -39,6 +44,10 @@ $(function () {
         }, {
             field: 'phoneNum',
             title: '电话',
+            align: 'center'
+        },{
+            field: 'agedInfo.address',
+            title: '地址',
             align: 'center'
         }]
     });

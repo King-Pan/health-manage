@@ -71,6 +71,7 @@ public class AgedServiceImpl implements AgedService {
                 dataDictPage.getTotalElements() + ",start=" +
                 dataDictPage.getNumber() + ",numberOfElements=" +
                 dataDictPage.getNumberOfElements());
+        log.info(message.toString());
         return message;
     }
 }
