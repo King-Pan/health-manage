@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode(exclude = {"agedInfo"}, callSuper = false)
 @Table(appliesTo = "aged", comment = "老人基础信息表")
 public class Aged extends BaseEntity {
     @Id
@@ -30,7 +29,8 @@ public class Aged extends BaseEntity {
     @Column(nullable = false, columnDefinition = " varchar(20) not null default 0 comment '身份证号码'")
     private String idCard;
 
-    @OneToOne(mappedBy = "aged",fetch = FetchType.LAZY)
+
+    @OneToOne(mappedBy = "aged")
     private AgedInfo agedInfo;
 
     @Column(nullable = false, columnDefinition = " datetime not null default now() comment '通用属性新增时间'")
@@ -51,6 +51,7 @@ public class Aged extends BaseEntity {
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +
                 ", status=" + status +
+                ", ageInfo=" + agedInfo +
                 '}';
     }
 }

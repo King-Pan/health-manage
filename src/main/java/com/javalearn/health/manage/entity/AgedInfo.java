@@ -1,5 +1,6 @@
 package com.javalearn.health.manage.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.Table;
 
@@ -14,7 +15,6 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode(exclude = {"aged"},callSuper=false)
 @Table(appliesTo = "aged_info",comment = "老人基础信息-扩展表")
 public class AgedInfo extends BaseEntity {
     @Id
@@ -22,8 +22,9 @@ public class AgedInfo extends BaseEntity {
     @Column(nullable = false,columnDefinition = " bigint comment '主键字段'")
     private Long id;
 
+    @JoinColumn(name = "aged_id", unique = true)
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="aged_id",unique = true)
+    @JsonIgnore
     private Aged aged;
 
     @Column(nullable = false,columnDefinition = " varchar(256) comment '家庭住址'")

@@ -1,11 +1,18 @@
 package com.javalearn.healthmanage;
 
 import com.javalearn.health.manage.HealthManageApplication;
+import com.javalearn.health.manage.entity.Department;
+import com.javalearn.health.manage.entity.Manager;
+import com.javalearn.health.manage.entity.dto.AgedDTO;
+import com.javalearn.health.manage.repository.DepartmentRepository;
+import com.javalearn.health.manage.repository.ManagerRepository;
+import com.javalearn.health.manage.service.AgedService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.MediaType;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -59,6 +66,35 @@ public class HealthManageApplicationTests {
         String contentAsString = response.getContentAsString();
         System.err.println(status);
         System.err.println(contentAsString);
+    }
+
+    @Autowired
+    private DepartmentRepository departmentRepository;
+
+    @Autowired
+    private ManagerRepository managerRepository;
+
+    @Test
+    public void dept(){
+
+        System.out.println();
+        Department department = departmentRepository.getOne(1);
+        System.out.println(department);
+    }
+
+    @Test
+    public void manager(){
+        Manager manager = managerRepository.getOne(1);
+        System.out.println(manager);
+    }
+
+
+    @Autowired
+    private AgedService agedService;
+
+    @Test
+    public void testPage(){
+        System.out.println(agedService.getPageList(new AgedDTO(),new PageRequest(0,10)));
     }
 
 }

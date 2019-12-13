@@ -24,4 +24,11 @@ public class HomeController {
         view.addObject("date", LocalDate.now().getYear());
         return view;
     }
+
+    @GetMapping("/loginPage2")
+    public ModelAndView loginPage2() {
+        ModelAndView view = new ModelAndView("login2");
+        view.addObject("date", LocalDate.now().getYear());
+        return view;
+    }
 }

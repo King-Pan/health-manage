@@ -30,25 +30,28 @@
                 </li>
 
                 <li>
-                    <a href="calendar.html" class="waves-effect"><i class="icon-calendar"></i><span> Calendar </span></a>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-paper-sheet"></i><span> Pages <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-mail-open"></i><span> 拜访管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
-                        <li><a href="pages-pricing.html">Pricing</a></li>
-                        <li><a href="pages-invoice.html">Invoice</a></li>
-                        <li><a href="pages-timeline.html">Timeline</a></li>
-                        <li><a href="pages-faqs.html">FAQs</a></li>
-                        <li><a href="pages-maintenance.html">Maintenance</a></li>
-                        <li><a href="pages-comingsoon.html">Coming Soon</a></li>
-                        <li><a href="pages-starter.html">Starter Page</a></li>
-                        <li><a href="pages-login.html">Login</a></li>
-                        <li><a href="pages-register.html">Register</a></li>
-                        <li><a href="pages-recoverpw.html">Recover Password</a></li>
-                        <li><a href="pages-lock-screen.html">Lock Screen</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-500.html">Error 500</a></li>
+                        <li><a th:href="@{/document/basic2}">拜访白名单</a></li>
+                        <li><a th:href="@{/document/life3}">拜访预约</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-calendar"></i><span> 生活管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/document/basic3}">保健服务</a></li>
+                        <li><a th:href="@{/document/life3}">旅居服务</a></li>
+                        <li><a th:href="@{/document/health3}">餐饮服务</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-setting-2"></i> <span> 系统管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/document/basic2}">用户管理</a></li>
+                        <li><a th:href="@{/document/basic3}">角色管理</a></li>
+                        <li><a th:href="@{/document/health5}">菜单管理</a></li>
+                        <li><a th:href="@{/document/health6}">权限管理</a></li>
+                        <li><a th:href="@{/document/health7}">操作日志</a></li>
                     </ul>
                 </li>
 
