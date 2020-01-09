@@ -16,32 +16,61 @@
                 <li class="menu-title">菜单</li>
                 <li>
                     <a th:href="@{/}" class="waves-effect">
-                        <i class="icon-accelerator"></i><span class="badge badge-success badge-pill float-right">9+</span> <span> 首页 </span>
+                        <i class="fas fa-home"></i><span class="badge badge-success badge-pill float-right">9+</span> <span> 首页 </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-mail-open"></i><span> 档案管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="far fa-address-card"></i><span> 档案管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
                         <li><a th:href="@{/document/basic}">基础信息</a></li>
                         <li><a th:href="@{/document/life}">生活信息</a></li>
                         <li><a th:href="@{/document/health}">健康信息</a></li>
                     </ul>
                 </li>
-
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-mail-open"></i><span> 拜访管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li><a th:href="@{/document/basic2}">拜访白名单</a></li>
-                        <li><a th:href="@{/document/life3}">拜访预约</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-calendar"></i><span> 生活管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-life-ring"></i><span> 生活管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
                     <ul class="submenu">
                         <li><a th:href="@{/document/basic3}">保健服务</a></li>
                         <li><a th:href="@{/document/life3}">旅居服务</a></li>
                         <li><a th:href="@{/document/health3}">餐饮服务</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-tools"></i><span> 设备管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/document/basic3}">健身设备</a></li>
+                        <li><a th:href="@{/document/life3}">娱乐设备</a></li>
+                        <li><a th:href="@{/document/health3}">医疗设备</a></li>
+                        <li><a th:href="@{/document/health3}">呼叫设备</a></li>
+                        <li><a th:href="@{/document/health3}">智能设备</a></li>
+                        <li><a th:href="@{/document/health3}">办公设备</a></li>
+                        <li><a th:href="@{/document/health3}">检维修计划</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fab fa-creative-commons-nc-jp"></i><span> 财务管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/document/basic3}">费用管理</a></li>
+                        <li><a th:href="@{/document/life3}">发票管理</a></li>
+                        <li><a th:href="@{/document/health3}">总账管理</a></li>
+                        <li><a th:href="@{/document/health3}">出纳管理</a></li>
+                        <li><a th:href="@{/document/health3}">固定资产</a></li>
+                        <li><a th:href="@{/document/health3}">工资管理</a></li>
+                        <li>
+                            <a href="javascript:void(0);" >预算管理<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="submenu">
+                                <li><a href="javascript:void(0);">预算设置</a></li>
+                                <li><a href="javascript:void(0);">预算记录</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-running"></i><span> 拜访管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <ul class="submenu">
+                        <li><a th:href="@{/document/basic2}">拜访白名单</a></li>
+                        <li><a th:href="@{/document/life3}">拜访预约</a></li>
                     </ul>
                 </li>
                 <li>
@@ -55,13 +84,13 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">Components</li>
+                <li class="menu-title">运营管理</li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-pencil-ruler"></i> <span> UI Elements <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="icon-pencil-ruler"></i> <span> 服务商管理 <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span> </a>
                     <ul class="submenu">
-                        <li><a href="ui-alerts.html">Alerts</a></li>
-                        <li><a href="ui-badge.html">Badge</a></li>
+                        <li><a href="ui-alerts.html">服务商类别</a></li>
+                        <li><a href="ui-badge.html"></a></li>
                         <li><a href="ui-buttons.html">Buttons</a></li>
                         <li><a href="ui-cards.html">Cards</a></li>
                         <li><a href="ui-dropdowns.html">Dropdowns</a></li>
