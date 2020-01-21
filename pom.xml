@@ -250,6 +250,29 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Docker maven plugin -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <imageName>pwpw1218/${project.artifactId}:${project.version}</imageName>
+                    <dockerDirectory>src/main/resources/docker</dockerDirectory>
+                    <!--TAG,这里用工程版本号-->
+                    <imageTags>
+                        <imageTag>${project.version}</imageTag>
+                    </imageTags>
+                    <registryUrl>hub.docker.com</registryUrl>
+                    <pushImage>true</pushImage>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
