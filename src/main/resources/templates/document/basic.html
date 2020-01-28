@@ -37,7 +37,7 @@
                         <button id="add" class="btn btn-success">
                             <i class="fas fa-plus-square" aria-hidden="true"></i> 新增
                         </button>
-                        <button id="modify" class="btn btn-primary">
+                        <button id="modify" class="btn btn-primary"  data-toggle="modal" data-target=".bs-example-modal-center">
                             <i class="fas fa-edit" aria-hidden="true"></i>修改
                         </button>
                         <button id="remove" class="btn btn-danger">
@@ -56,11 +56,63 @@
         <!-- content -->
         <footer th:replace="commons/footer :: footer"></footer>
     </div>
+
+
     <!-- ============================================================== -->
     <!-- End Right content here -->
     <!-- ============================================================== -->
 </div>
+
 <div th:replace="commons/js :: js"></div>
 <script type="text/javascript" th:src="@{/js/document/basic.js}"></script>
+
+<div class="modal fade bs-example-modal-center" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0">基础信息维护</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row" id="rowId" style="display: none">
+                    <label for="example-text-input" class="col-sm-2 col-form-label right" style="float: right">ID</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" value="123456" disabled>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-sm-2 col-form-label right" style="float: right">姓名</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" placeholder="请输入姓名" name="name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">身份证号</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" name="idCard" placeholder="请输入身份证号">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">电话</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" placeholder="请输入电话号码" name="phoneNum">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-text-input" class="col-sm-2 col-form-label">地址</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" placeholder="请输入地址" name="address">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">提交</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 </body>
 </html>
